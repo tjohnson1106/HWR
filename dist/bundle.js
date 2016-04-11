@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "376ea6a77b9540640407"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "26708ae00560a90e9bab"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -583,9 +583,23 @@
 
 	'use strict';
 
-	console.log('React is up and running!');
+	var _react = __webpack_require__(66);
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(170); if (makeExportsHot(module, __webpack_require__(66))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(170);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Detail = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./pages/Detail\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _Detail2 = _interopRequireDefault(_Detail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	_reactDom2.default.render(_react2.default.createElement(_Detail2.default, null), document.getElementById('app'));
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(171); if (makeExportsHot(module, __webpack_require__(66))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ },
@@ -20620,8 +20634,17 @@
 
 	'use strict';
 
-	var isReactClassish = __webpack_require__(171),
-	    isReactElementish = __webpack_require__(172);
+	module.exports = __webpack_require__(68);
+
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var isReactClassish = __webpack_require__(172),
+	    isReactElementish = __webpack_require__(173);
 
 	function makeExportsHot(m, React) {
 	  if (isReactElementish(m.exports, React)) {
@@ -20675,7 +20698,7 @@
 
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports) {
 
 	function hasRender(Class) {
@@ -20725,10 +20748,10 @@
 	module.exports = isReactClassish;
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isReactClassish = __webpack_require__(171);
+	var isReactClassish = __webpack_require__(172);
 
 	function isReactElementish(obj, React) {
 	  if (!obj) {
