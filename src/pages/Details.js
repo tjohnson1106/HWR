@@ -2,15 +2,21 @@
  import Chance from 'chance';
 
  class Detail extends React.Component {
- 	buttonClicked() {
- 		console.log('Button was clicked!')
- 	}
- render() {
+ 		buttonClicked() {
+ 			console.log('Button was clicked!')
+ 		}
+ 		render() {
     return (<div>
-        <p>Hello, {chance.first()}.</p>
-        <p>You are from {chance.country({ full: true })}.</p>
-        <button onClick={this.buttonClicked}>Meet Someone New</button>
-    </div>);
+        <p>Hello, {this.state.name}.</p>
+        <p>You are from {this.state.country}.</p>
+        
+        buttonClicked() {
+    const newState = {
+        name: chance.first()
+    };
+
+    this.setState(newState);
+}
 }
 
- export default Detail;
+ 				export default Detail;
