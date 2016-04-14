@@ -5,18 +5,27 @@
  		buttonClicked() {
  			console.log('Button was clicked!')
  		}
- 		render() {
-    return (<div>
-        <p>Hello, {this.state.name}.</p>
-        <p>You are from {this.state.country}.</p>
-        
-        buttonClicked() {
-    const newState = {
-        name: chance.first()
-    };
+ 		constructor(props) {
+    super(props);
 
-    this.setState(newState);
+    const people = [];
+
+    for (let i = 0; i < 10; i++) {
+        people.push({
+            name: chance.first(),
+            country: chance.country({ full: true })
+        });
+    }
+
+    this.state = { people };
 }
 }
+
+render() {
+    return (<div>
+    {this.state.people.map((person, index) => (
+        <p>Hello, {person.name} from {person.country}!</p>
+    ))}
+    </div>);
 
  				export default Detail;
