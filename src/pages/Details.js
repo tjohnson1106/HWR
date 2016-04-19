@@ -30,15 +30,7 @@ this.fetchFeed('pulls');
 }
 
 
-showCommits() {
-this.setState({ mode: 'commits' });
-}
-showForks() {
-this.setState({ mode: 'forks' });
-}
-showPulls() {
-this.setState({ mode: 'pulls' });
-}
+
 renderCommits() {
 return this.state.commits.map((commit, index) => {
 const author = commit.author ? commit.author.login : 'Anonymous';
@@ -82,5 +74,9 @@ return (<div>
 {content}
 </div>);
 }
+}
+
+selectMode(mode) {
+this.setState({ mode });
 }
 export default Detail;
