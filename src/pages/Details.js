@@ -1,6 +1,18 @@
 import React from 'react';
 import ajax from 'superagent';
 class Detail extends React.Component {
+
+    fetchFeed(type) {
+ajax.get(`https://api.github.com/repos/facebook/react/${type}`)
+.end((error, response) => {
+if (!error && response) {
+this.setState({ [type]: response.body });
+} else {
+console.log(`Error fetching ${type}`, error);
+}
+}
+);
+}
 constructor(props) {
 super(props);
 this.state = {
@@ -10,20 +22,10 @@ forks: [],
 pulls: []
 };
 }
-componentWillMount() {
-ajax.get('https://api.github.com/repos/facebook/react/commits')
-.end((error, response) => {
-if (!error && response) {
-this.setState({ commits: response.body });
-} else {
-console.log('Error fetching commits', error);
-}
-}
-);
+
 
 componentWillMount() {
 this.fetchFeed('commits');
-this.fetchFeed('forks');
 this.fetchFeed('pulls');
 }
 
