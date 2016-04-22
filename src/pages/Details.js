@@ -75,8 +75,9 @@ return (<div>
 </div>);
 }
 }
-
+//to read the data-mode attribute of whichever button was clicked, read the dataset.mode property of the event's current target
+dataset.mode property of the event’s currentTarget
 selectMode(mode) {
-this.setState({ mode });
+this.setState({ mode: event.currentTarget.dataset.mode });
 }
 export default Detail;
